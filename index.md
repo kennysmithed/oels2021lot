@@ -28,8 +28,8 @@ I'd encourage you to work through as much of the material as you can before the 
 
 - *Scientific content:* lab vs online data collection
 - *Technical content:* jspsych basics, intro to crowdsourcing platforms
-- [Reading](oelslot_reading_pre.md)
-- [Programming task](oelslot_practical_pre.md)
+- [Reading](oels_reading_pre.md)
+- [Programming task](oels_practical_pre.md)
 
 
 ### Monday: Grammaticality judgments and self-paced reading
