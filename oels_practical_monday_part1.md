@@ -5,7 +5,7 @@ description: Simple key- and button-press responses
 
 ## The plan
 
-The plan is to look at a simple grammaticality judgment experiment (that's part 1) and then in part 2 to look at a slightly more complicated self-paced reading experiment. Remember, the idea is that you do as much of this as you can on your own (might be none of it, might be all of it) and then come to the practical drop-in sessions or use slack to get help with stuff you need help with.
+The plan is to look at a simple grammaticality judgment experiment (that's part 1) and then in part 2 to look at a slightly more complicated self-paced reading experiment. Remember, the idea is that you do as much of this as you can on your own (might be none of it, might be all of it) and then come to the practical sessions or use slack to get help with stuff you need help with.
 
 
 ## A grammaticality judgment experiment

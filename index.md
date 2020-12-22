@@ -41,7 +41,7 @@ Slightly ambitiously the plan is to cram a couple of basic experimental paradigm
 - [Reading part 1](oels_reading_monday_part1.md)
 - [Programming task part 1](oels_practical_monday_part1.md)
 - [Reading part 2](oels_reading_monday_part2.md)
-
+- [Programming task part 2](oels_practical_monday_part2.md)
 
 
 ### Tuesday: Word learning / frequency learning

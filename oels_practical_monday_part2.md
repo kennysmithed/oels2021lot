@@ -1,13 +1,15 @@
 ---
-title: Week 4 practical
+title: Monday practical, part 2
 description: Collecting reaction time data, more complex nested trials
 ---
 
-## The plan for week 4 practical
+## The plan
 
-This week we are going to look at a bit more of the [Online Experiments with jsPsych tutorial](https://softdev.ppls.ed.ac.uk/online_experiments/index.html), and then look at code for a simple self-paced reading experiment - as you should know from the reading this week, in a self-paced reading experiment your participants read sentences word by word, and you are interested in where they are slowed down (which might indicate processing difficulties). We therefore care about reaction times (which we didn't for our grammaticality judgments task last week, although jsPsych collected them for us anyway). We are also going to see some slightly more complex timelines, with trials that consist of several parts and even a javascript function that simplifies the process of building those complex trials for us (the tutorial section you work through this week will teach you some basics of javascript to help you understand that). Finally, I'll add an example at the end of how to collect demographic info from your participants, which is often something you want to do.
+If we can fit it in, the second part of this practical is look at a bit more of the [Online Experiments with jsPsych tutorial](https://softdev.ppls.ed.ac.uk/online_experiments/index.html), and then look at code for a simple self-paced reading experiment - if this proves to be too ambitious you can cover this on Tuesday and push everything else back by one day.
 
-Remember, as usual the idea is that you do as much of this as you can on your own (might be none of it, might be all of it) and then come to the practical drop-in sessions or use the chat on Teams to get help with stuff you need help with.
+As you should know from the reading, in a self-paced reading experiment your participants read sentences word by word, and you are interested in where they are slowed down (which might indicate processing difficulties). We therefore care about reaction times (which we didn't for our grammaticality judgments task last, although jsPsych collected them for us anyway). We are also going to see some slightly more complex timelines, with trials that consist of several parts and even a javascript function that simplifies the process of building those complex trials for us (the tutorial section you work through will teach you some basics of javascript to help you understand that). Finally, I'll add an example at the end of how to collect demographic info from your participants, which is often something you want to do.
+
+Remember, as usual the idea is that you do as much of this as you can on your own (might be none of it, might be all of it) and then come to the practical sessions or use slack to get help with stuff you need help with.
 
 ## Tutorial content
 
@@ -21,17 +23,17 @@ After you have looked at section 05 of the tutorial you will be equipped to look
 
 ### Getting started
 
-As per last week, I'd like you to download and run the code I provide, look at how the code works, and then attempt the exercises below, which involve editing the code in simple ways and puzzling over the output.
+As per the grammaticality judgments practical, I'd like you to download and run the code I provide, look at how the code works, and then if you have time attempt the exercises below, which involve editing the code in simple ways and puzzling over the output.
 
 You need two files for this experiment, which you can download through the following two links:
 - <a href="code/self_paced_reading/self_paced_reading.html" download> Download self_paced_reading.html</a>
 - <a href="code/self_paced_reading/self_paced_reading.js" download> Download self_paced_reading.js</a>
 
-Again, the code makes some assumptions about the directory structure it's going to live in - regardless of whether you are putting this on your own computer or on the jspsychlearning server, these should sit in a folder called something like `self_paced_reading`, alongside your `grammaticality_judgments` folder from last week and a `jspsych-6.1.0` folder containing all the jsPsych code - so your folder will now look something like this.
+Again, the code makes some assumptions about the directory structure it's going to live in - regardless of whether you are putting this on your own computer or on the server, these should sit in a folder called something like `self_paced_reading`, alongside a `jspsych-6.2.0` folder - so your folder will now look something like this.
 
 ![suggested directory structure](images/spr_directory_structure.png)
 
-Assuming you have the directory structure all right, this code should run on your local computer (just open the `self_paced_reading.html` file in your browser) or you can upload the whole `self_paced_reading` folder to the public_html folder on the jspsychlearning server and play with it there (if your directory structure is as suggested the url for your experiment will be http://jspsychlearning.ppls.ed.ac.uk/~UUN/self_paced_reading/self_paced_reading.html).
+Assuming you have the directory structure all right, this code should run on your local computer (just open the `self_paced_reading.html` file in your browser) or you can upload the whole `self_paced_reading` folder to the `public_html` folder on the server and play with it there (if your directory structure is as suggested the url for your experiment will be http://jspsychks.ppls.ed.ac.uk/~USER/self_paced_reading/self_paced_reading.html).
 
 First, get the code and run through it so you can check it runs, and you can see what it does. Then take a look at the HTML and js files in your code editor (e.g. Atom).
 
@@ -66,7 +68,7 @@ var spr_trial_the_basic_way = [
 ```
 
 That will present the sentence "A self-paced reading trial" one word at a time,
-waiting for a spacebar response after each word, then present a y/n comprehension question at the end. However, that is quite unwieldy - there is lots of redundant information (we have to specify every time the trial type, the spacebar input), building the trial list for a long experiment with hundreds of sentences is going to be very error prone, and it would be impossible to randomise the order without messing everything up horribly!
+waiting for a spacebar response after each word, then present a y/n comprehension question at the end. However, that is quite unwieldy - there is lots of redundant information (every trial has the same trial type etc, but we have to specify it every time), building the trial list for a long experiment with hundreds of sentences is going to be very error prone, and it would be impossible to randomise the order without messing everything up horribly!
 
 Thankfully jsPsych provides a nice way around this. A slightly more sophisticated solution involves using nested timelines (explained under *Nested timelines* in [the relevant part of the jsPsych documentation](https://www.jspsych.org/overview/timeline/): we create a trial which has its own timeline, and then that is expanded into a series of trials, one trial per item
 in the timeline (so each of these complex trials functions a bit like its own stand-alone embedded experiment with its own timeline). We can use nested timelines to form a more compressed representation of the long trial sequence above and get rid of some of the redundancy.
@@ -86,7 +88,7 @@ var spr_trial_using_nested_timeline = [
 
 The first part of that is an `html-keyboard-response` trial, which accepts space as the only valid input, and which has a nested timeline that will expand out so that we have our sentence presented in a sequence of 4 trials. Then we have the comprehension question, another `html-keyboard-response` trial but no nested timeline and looking for a y-n response.
 
-I find that quite clear to look at, but you'll notice that there's still some redundancy (we have to specify twice that type is `html-keyboard-response`), plus we are just producing a flat array of reading trials then a comprehension question - you could imagine that if we want to randomise the order somehow, we might accidentally seperate a sentence and its comprehension question.
+I find that quite clear to look at, but you'll notice that there's still some redundancy (we have to specify twice that type is `html-keyboard-response`), plus we are just producing a flat array of reading trials then a comprehension question - you could imagine that if we want to randomise the order somehow, we might accidentally separate a sentence and its comprehension question.
 
 There is an even more compressed way of representing this trial sequence, which looks like this:
 
@@ -138,7 +140,7 @@ the spaces using a built-in javascript function called `split`), and then uses a
 little `for` loop to build the word-by-word stimulus list. Then it slots that
 word-by-word stimulus list plus the comprehension question into our trial template, and returns that trial.
 
-Here's the function. I have called it `make_spr_trial` (spr = self-paced reading), and it takes two arguments (Alisdair calls them *parameters* in section 5 of the tutorial, I guess he was raised wrong): a sentence to present word by word, and a yes-no comprehension question.
+Here's the function. I have called it `make_spr_trial` (spr = self-paced reading), and it takes two arguments (sometimes called *parameters*): a sentence to present word by word, and a yes-no comprehension question.
 
 ```js
 
@@ -166,11 +168,13 @@ var spr_trial_1 = make_spr_trial("A self paced reading trial","Was this a self p
 var spr_trial_2 = make_spr_trial("Another self paced reading trial","Trick question: Wasn't this a self paced reading trial?")
 ```
 
-### Other bits and pieces, including collecting demographics
+### Optional extras: other bits and pieces, including collecting demographics
 
-As usual, your experiment will need a consent screen and some instruction screens. Those bits are basically the same as last week so I won't bother showing the code here, but two quick comments:
-- As per last week, for the initial consent screen I am using a button response - I like a button response here because I think it makes it less likely that people will keypress through before they realise what they are supposed to be doing.
-- For the instruction screen I am using a keyboard response trial in the same way I did last week. But note that jsPsych provides an instructions plugin (https://www.jspsych.org/plugins/jspsych-instructions/) which would be better if you were providing several pages of instructions.
+If you have had nearly enough for today, skip this section and jump to the next section - I want to show you how to collect demographics info, but we have already covered *a lot* of ground today and you'll get another chance to see something similar in later practicals.
+
+As usual, your experiment will need a consent screen and some instruction screens. Those bits are basically the same as the grammaticality judgments practical so I won't bother showing the code here, but two quick comments:
+- As per last the grammaticality judgments code, for the initial consent screen I am using a button response - I like a button response here because I think it makes it less likely that people will keypress through before they realise what they are supposed to be doing. You could consider making *all* instruction screens button response rather than keyboard response if you are worried about people mashing the keyboard and rushing through.
+- For the instruction screen I am using a keyboard response trial in the same way I did in the grammaticality judgments code. But note that jsPsych provides an instructions plugin (https://www.jspsych.org/plugins/jspsych-instructions/) which would be better if you were providing several pages of instructions.
 
 For this experiment I have also added a trial (just before our very final `final_screen` trial) where we collect some additional info from the participant. Often you want to collect demographic information from your participants - e.g. age, gender, whether they are a native speaker of some language - and give them the opportunity to provide free-text comments (e.g. in case there is a problem with your experiment that they have noticed). In general you shouldn't collect data you don't actually need - it wastes the participants' time, potentially means you are storing unnecessary personal information about your participants, and also opens up various temptations at analysis time ("Hmm, this experiment doesn't looked like it worked, how boring. But wait! If I split it by gender and age, which I collected for no real reason, then I get a weird pattern of significant results, maybe I can pretend I predicted that all along and publish this?"). So don't feel you always need to include the exact questions I have put here, these are just some examples of how to collect some common response types.
 
@@ -223,7 +227,7 @@ var full_timeline = [consent_screen,instruction_screen_1,
                      final_screen]
 ```
 
-And then we use `jsPsych.init` to run it - again,  nothing fancy going on here, and we are just dumping the data to the display at the end. Next week I'll show you how to do something a bit more useful with the data, i.e. save it as a CSV file.
+And then we use `jsPsych.init` to run it - again,  nothing fancy going on here, and we are just dumping the data to the display at the end. In the next practical I'll show you how to do something a bit more useful with the data, i.e. save it as a CSV file.
 
 ```js
 jsPsych.init({
@@ -232,18 +236,17 @@ jsPsych.init({
 })
 ```
 
-## Exercises with the grammaticality judgment experiment code
+## Exercises with the self-paced reading experiment code
 
 Attempt these problems.
 
 - How would you add extra trials to this code, i.e. additional sentences and related comprehension questions? Replace my silly placeholder sentences with some more appropriate ones, e.g. inspired by the items in Table 2 of Enochson & Culbertson (2015).
-- Add another demographics question, e.g. a text box to list other languages spoken, or some additional radio buttons with more than 2 options.
 - Have a look at the data that is displayed at the end of the experiment. Can you see where the stimulus for each trial is recorded? Can you see where the crucial reaction time data for each trial is recorded? Can you see how the demographics data is recorded? Can you work out what the "internal_node_id" column is doing (which looks like e.g. "0.0-2.0-0.0-0.0" ... "0.0-2.0-0.0-1.0 ... "0.0-2.0-0.0-2.0")?
 - If you were going to analyse this kind of data, you would need to pull out the relevant trials (i.e. the ones involving self-paced reading, and comprehension questions). Is it going to be easy to do that based on the kind of output the code produces? How would you identify those trials? If you were particularly interested in certain words in certain contexts, is it going to be easy to pull those trials out of the data the code produces?
-- [Optional, more challenging] An alternative to self-paced reading is the Maze task (e.g. Forster et al., 2009; Boyce et al., 2020); like self-paced reading your participants work through a sentence word by word, but unlike in self-paced reading at each step they chose one of two continuations for the sentence (see image below from Boyce et al., 2020 - G-Maze refers to mazes where the distractors are English words which would be ungrammatical continuations, L-maze has non-word distractors). Can you convert the self-paced reading code to run a maze task? For each word presentation you will need an alternative continuation, and some way of the participant selecting their continuation (e.g. keyboard? button?). Maze tasks also don't feature comprehension questions so you can drop those (the idea is that selecting the correct continuation throughout shows you are paying attention). Mazes also abort the sentence when the participant makes a mistake - we haven't covered this yet and it is somewhat tricky, but is possible using `on_finish` and  `jsPsych.endCurrentTimeline` (see example in [jsPsych core documentation](https://www.jspsych.org/core_library/jspsych-core/)).
+- [Optional] Add another demographics question, e.g. a text box to list other languages spoken, or some additional radio buttons with more than 2 options.
+- [Optional, challenging] An alternative to self-paced reading is the Maze task (e.g. Forster et al., 2009; Boyce et al., 2020); like self-paced reading your participants work through a sentence word by word, but unlike in self-paced reading at each step they chose one of two continuations for the sentence (see image below from Boyce et al., 2020 - G-Maze refers to mazes where the distractors are English words which would be ungrammatical continuations, L-maze has non-word distractors). Can you convert the self-paced reading code to run a maze task? For each word presentation you will need an alternative continuation, and some way of the participant selecting their continuation (e.g. keyboard? button?). Maze tasks also don't feature comprehension questions so you can drop those (the idea is that selecting the correct continuation throughout shows you are paying attention). Mazes also abort the sentence when the participant makes a mistake - we haven't covered this yet and it is somewhat tricky, but is possible using `on_finish` and  `jsPsych.endCurrentTimeline` (see example in [jsPsych core documentation](https://www.jspsych.org/core_library/jspsych-core/)).
 
 ![mazes](images/mazes.jpg)
-
 
 
 ## References
