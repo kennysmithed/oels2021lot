@@ -3,7 +3,7 @@ title: Monday reading, part 1
 description: Grammaticality judgements
 ---
 
-## The plan for week 3
+## The plan
 
 Now we have worked through some preliminaries, we'll move on to some more interesting content, seeing how people have used online data collection to answer linguistic questions and playing with code to allow us to do the same.
 
