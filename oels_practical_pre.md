@@ -18,6 +18,7 @@ Read the notes and caveats below, then work through sections 00, 01, 02, 03 and 
 Once you have done these tasks you should be able to access the teaching server, upload code, edit code in something like Atom, and have a (very basic) idea of what a trivial jsPsych "hello world" experiment looks like, and have a bit of an idea of timelines. In the next practical we'll look at an actual experiment written in jsPsych.
 
 Some things to note as you work through the practical.
+- jsPsych is quite frequently updated; when I taught this course in October-December 2020 we were using version 6.1.0, they latest release is 6.2.0, I'll try to update these notes to use version 6.2.0 but if you see ocasional references to 6.1.0 that's why. You can get version 6.2.0 [from github](https://github.com/jspsych/jsPsych/releases/tag/v6.2.0), click on the link called `jspsych-6.2.0.zip` at the very bottom to [download the zip file](https://github.com/jspsych/jsPsych/releases/download/v6.2.0/jspsych-6.2.0.zip), uncompress it, and then you can copy that folder to where you need it.
 - We will be playing with code on the teaching server, which will be `jspsychks.ppls.ed.ac.uk` (and not `jspsychlearning.ppls.ed.ac.uk`). The server will be accessible in January. Until then, you won't be able to access it, but you can still read through the tutorial, and run the code on your local computer by opening the html file in Chrome.
 - In section 02, the tutorial recommends using CyberDuck for uploading files to the server - I agree, it's very nice. Just to emphasise, *you don't need to pay for it*, although it will ask you if you'd like to occasionally. I have bought a license because I use it a lot, if that helps assuage your guilt.
 - There are two ways you can use Cyberduck. You can either download files to your local computer, edit them, and re-upload them. This is quite laborious, because every time you make a change you have to re-upload the file. Cyberduck also offers a very nice option to edit the file directly (right-click the file in Cyberduck and select "Edit with..." and then select an editor, below I recommend Atom). This is much more convenient, but sometimes the version you are editing becomes decoupled from the version on the server - so you are editing the file but those changes are not saved to the server. Watch out for this, because it's very confusing - if you are changing the experiment but the version on the server seems not to change, this might be why! See the note below on common problems.
@@ -47,15 +48,15 @@ The other possibility is that you are not actually editing the file that you are
 
 ### Problem connecting to the jspsychks server
 
-Remember, the server isn;t open until January - I will send you your login details when it becomes available.
+Remember, the server isn't open until January - I will send you your login details when it becomes available.
 
-Check that you are selecting SFTP in the cyberduck dropdown menu - i.e. for me it looks like the picture below. If you get the error "Connection failed. Connection timed out:connect. The connection attempt was rejected. The server may be down or your network may not be properly configured" this is probably the problem.
+Check that you are selecting SFTP in the cyberduck dropdown menu - i.e. for me it looks like the picture below (but you will be using the jspsychks server instead). If you get the error "Connection failed. Connection timed out:connect. The connection attempt was rejected. The server may be down or your network may not be properly configured" this is probably the problem.
 
 ![cuberduck window](images/cyberduck.png)
 
 ### Where do I put my Hello World code on the server?
 
-For the hello world demo, you can just run the code on your own computer - but if you want to test it on the server, you need to copy your code into your public_html folder on jspsychks server. You want a folder called e.g. "hello" which contains experiment.html and the jspsych folder, e.g. something like this:
+For the hello world demo, you can just run the code on your own computer, by opening the experiment.html file in a browser. But if you want to test it on the server, you need to copy your code into your public_html folder on jspsychks server. You want a folder called e.g. "hello" which contains experiment.html and the jspsych folder, e.g. something like this:
 
 ![cuberduck window](images/hello_directory_structure.png)
 
