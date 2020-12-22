@@ -24,7 +24,7 @@ The idea is that for every experiment we will create a new folder that looks lik
 
 (An aside: you might be wondering why we are including a separate copy of the jsPsych code with every experiment, rather than just having one shared copy that they all use. That's a great question, and I originally used a single shared copy. But Josh de Leeuw pointed out that it's better if every experiment is its own self-contained bundle that includes all the code it needs to run - otherwise, if we use a shared copy of jsPsych, when we update that shared copy we might break experiments that rely on features of an old version that no longer work. Including the jsPsych code separately with every experiment looks a bit redundant, but that redundancy provides robustness).
 
-Assuming you have the directory structure all right, this code should run on your local computer (just open the `grammaticality_judgments.html` file in your browser) or you can upload it to the teaching server and play with it there, using the same sort of directory structure.
+Assuming you have the directory structure all right, this code should run on your local computer (just open the `grammaticality_judgments.html` file in your browser) or you can upload it to the teaching server, put the `grammaticality_judgments` folder inside the `public_html` folder, and play with it there - assuming you have the directory structure as I describe, your URL will be http://jspsychks.ppls.ed.ac.uk/~USER/grammaticality_judgments/grammaticality_judgments.html, where USER is jspsych....
 
 First, get the code and run through it so you can check it runs, and you can see what it does. Then take a look at the HTML and js files in your code editor (e.g. Atom).
 
@@ -87,7 +87,7 @@ var instruction_screen_1 = {
 }
 ```
 
-That's quite a lot of text, but it's just a very simple keyboard response trial with a long bit of HTML-formatted bit of text to display.
+That's quite a lot of text, but it's just a very simple keyboard response trial with a long bit of HTML-formatted text to display.
 
 Once all the various trials are defined, we can stick them together in a timeline for the experiment. The timeline is very simple and is just a list of all the trials we have created up to this point:
 ```js
