@@ -38,6 +38,9 @@ Slightly ambitiously the plan is to cram a couple of basic experimental paradigm
 
 - *Scientific content:* lab vs online grammaticality judgments; syntactic processing and acceptability; processing costs of syntactic dependencies
 - *Technical content:* simple key- and button-press responses; collecting reaction time data; more complex nested trials
+- [Reading part 1](oels_reading_monday_part1.md)
+- [Programming task part 1](oels_practical_monday_part1.md)
+
 
 
 ### Tuesday: Word learning / frequency learning
