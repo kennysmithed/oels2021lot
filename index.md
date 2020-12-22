@@ -34,6 +34,8 @@ I'd encourage you to work through as much of the material as you can before the 
 
 ### Monday: Grammaticality judgments and self-paced reading
 
+Slightly ambitiously the plan is to cram a couple of basic experimental paradigms into the first day - hopefully the paradigms and the code are simple enough that we can manage this, but remember you have all week to make use of me in drop-in labs so if you don't get through this on the Monday you can get help with it later in the week.
+
 - *Scientific content:* lab vs online grammaticality judgments; syntactic processing and acceptability; processing costs of syntactic dependencies
 - *Technical content:* simple key- and button-press responses; collecting reaction time data; more complex nested trials
 
