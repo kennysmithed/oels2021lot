@@ -63,7 +63,7 @@ Slightly ambitiously the plan is to cram a couple of basic experimental paradigm
 
 ### Friday: Participant-to-participant interaction or Iterated Learning
 
-Pick one of the two topics and do the associated reading / practical.
+Pick one of the two topics and do the associated reading / practical. And if we don't get this far and need to use Friday for catching up on earlier practicals, that's completely fine - we are squeezing a lot in, you can always come back and look at this stuff later if we don't get to it during the week.
 
 Participant-to-participant interaction:
 - *Scientific content:* least effort and Zipf's Law of Abbreviation
