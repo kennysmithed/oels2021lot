@@ -48,6 +48,8 @@ Slightly ambitiously the plan is to cram a couple of basic experimental paradigm
 
 - *Scientific content:* probability matching and regularisation
 - *Technical content:* using trial data for contingent trials; filtering and saving data
+- [Reading](oels_reading_tuesday.md)
+- [Programming task](oels_practical_tuesday.md)
 
 ### Wednesday: Audio stimuli
 
