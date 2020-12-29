@@ -63,7 +63,7 @@ Slightly ambitiously the plan is to cram a couple of basic experimental paradigm
 - *Scientific content:* syntactic priming and alignment
 - *Technical content:*  Audio recording, more randomisation stuff, custom preload lists, reading trial lists from CSV
 - [Reading](oels_reading_thursday.md)
-- Programming task
+- [Programming task](oels_practical_thursday.md)
 
 ### Friday: Participant-to-participant interaction or Iterated Learning
 
