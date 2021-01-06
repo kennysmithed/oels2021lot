@@ -32,7 +32,7 @@ The object stimuli for this experiment were provided by my colleague Dr Jennifer
 You need a bunch of files for this experiment - an html file, a couple of js files, some images, and a bunch of php files. Download the following zip file and then uncompress it into your usual jspsych folder:
 - <a href="code/iterated_learning.zip" download> Download iterated_learning.zip</a>
 
-This code won't work on your local computer, it needs to be on the jspsychks server - so once you have extracted the zip file, you need to upload the whole `iterated_learning` folder to your `public_html` folder on the jspsychlearning server, alongside your various other experiment folders. The `iterated_learning` folder will need to contain a copy of the jspsych code as usual. 
+This code won't work on your local computer, it needs to be on the jspsychks server - so once you have extracted the zip file, you need to upload the whole `iterated_learning` folder to your `public_html` folder on the jspsychlearning server, alongside your various other experiment folders. The `iterated_learning` folder will need to contain a copy of the jspsych code as usual.
 
 You also need to tweak the `iterated_learning.js` code so it saves data to *your* `server_data` folder. This bit of code requires several PHP files for manipulating data files, so rather than asking you to edit them all individually, you can edit this in one place and it will work nicely everywhere. Open `iterated_learning.js` in an editor and find the line that says
 ```js
@@ -92,11 +92,9 @@ All of these various actions are carried out by PHP scripts, which we can call f
 
 ### Digging in to the code: updating our save_data function
 
-Now you (hopefully) get the general idea, we can have a look at some more detailed aspects of the code. The first thing to flag up is that I have changed the `save_data.php` script a bit, and also changed the `save_data` function in the javascript code, to make it a bit more general. In the old version of our `save_data.php` it was hard-wired to write to a specific sub-folder in the `server_data` folder. For the new experiment we want to save stuff to two different sub-folders of `server-data/il` (saving participant data to `server-data/il/participant_data` and output languages to `server-data/il/ready_to_iterate`), and we really don't want to have to write two different PHP scripts which are trivially different from each other just to handle that. The solution is to make the `save_data.php` and `save_data` javascript functions a bit more general - we pass in information about which user's `server_data` directory to use (ksmith7 for me, a different user name for you), and also which directory to save the data in (which avoids us having to create different PHP scripts for saving in slightly different directories). The new more general code looks like this:
+Now you (hopefully) get the general idea, we can have a look at some more detailed aspects of the code. The first thing to flag up is that I have changed the `save_data.php` script a bit, and also changed the `save_data` function in the javascript code, to make it a bit more general. In the old version of our `save_data.php` it was hard-wired to write to a specific sub-folder in the `server_data` folder. For the new experiment we want to save stuff to two different sub-folders of `server-data/il` (saving participant data to `server-data/il/participant_data` and output languages to `server-data/il/ready_to_iterate`), and we really don't want to have to write two different PHP scripts which are trivially different from each other just to handle that. The solution is to make the `save_data.php` and `save_data` javascript functions a bit more general - we pass in information about which user's `server_data` directory to use (via the `my_user_name` variable, ksmith7 for me, a different user name for you), and also which directory to save the data in (which avoids us having to create different PHP scripts for saving in slightly different directories). The new more general code looks like this:
 
 ```js
-
-var my_user_name = 'ksmith7'
 
 function save_data(directory,filename,data){
   var url = 'save_data.php';
