@@ -21,7 +21,7 @@ Remember, as usual the idea is that you do as much of this as you can on your ow
 ### Getting started
 
 You need a bunch of files for this experiment - an html file, a few js files, some images, and then a folder containing some python code (this is where most of the magic happens). Download the following zip file and then uncompress it into your usual jspsych folder:
-- <a href="code/dyadic_interaction.zip"> Download dyadic_interaction.zip</a>
+- <a href="code/dyadic_interaction.zip"> test Download dyadic_interaction.zip</a>
 
 As usual, the code makes some assumptions about the directory structure it's going to live in - in particular, it needs a copy of jspych. Regardless of whether you are putting this on your own computer or in your `public_html` folder on the server, these should sit in a folder called `dyadic_interaction`, alongside a copy of the `jspsych-6.2.0` folder. This code should actually run OK on your local computer, but it won't save your data if you run it locally - so to get the full experience, you need to run it on the server. Furthermore, there is one tweak you need to make before your data will save:
 - You need to edit `save_data.php` so that it points to *your* `server_data` folder. Open that file in an editor and change the path `/home/USER/server_data/` to reflect your user name.
