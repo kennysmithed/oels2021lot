@@ -73,6 +73,7 @@ Participant-to-participant interaction:
 - *Scientific content:* least effort and Zipf's Law of Abbreviation
 - *Technical content:* web sockets, python servers, incrementally building a timeline
 - [Reading](oels_reading_friday_dyads.md)
+- [Programming task](oels_practical_friday_dyads.md)
 
 Iterated Learning:
 - *Scientific content:* iterated learning and the evolution of compositional structure
