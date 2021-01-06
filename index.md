@@ -79,6 +79,7 @@ Iterated Learning:
 - *Scientific content:* iterated learning and the evolution of compositional structure
 - *Technical content:* reading trial lists from CSVs again, PHP scripts for iteration
 - [Reading](oels_reading_friday_il.md)
+- [Programming task](oels_practical_friday_il.md)
 
 ## Re-use
 
