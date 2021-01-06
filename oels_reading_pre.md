@@ -95,7 +95,7 @@ If you want to get a feel for what online experiments look like from the partici
 - A couple of working experiments (of mine)
 	- [A simple word learning experiment](https://blake4.ppls.ed.ac.uk/ksmith7/redup.html?), with novel objects and non-word labels. Participants are trained and tested on object-label pairs, we are interested in this case in whether people learn labels featuring repetition (e.g. wewe) better than labels without repetition (e.g. moga). [This is the associated paper](https://psyarxiv.com/ctv9f/) (the online experiment is Experiment 2).
 	- [A (very long) morphology learning experiment](https://blake4.ppls.ed.ac.uk/ksmith7/yesnosounds_v2.html) - you listen to inflected forms plus definitions, then at the end there's a recognition memory test, although I would *not* recommend going though the whole thing! We were interested in a particular theory (disproven!) about how different placement of irregular inflections might influence learning. This one is actually written in jsPsych, unlike the other two examples here.
-	- [An in-development kinship vocabulary learning experiment](https://blake4.ppls.ed.ac.uk/ksmith7/kin.html) - completely lacking in participant instructions at the moment, but you are introduced to a cast of characters and then try to learn the kinship vocabulary they use to address each other. We are interested in whether certain kinship terminologies are easier or harder to learn than others, and how people use those kinship systems in interaction.
+	
 
 
 
