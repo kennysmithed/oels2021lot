@@ -72,10 +72,12 @@ Pick one of the two topics and do the associated reading / practical. And if we 
 Participant-to-participant interaction:
 - *Scientific content:* least effort and Zipf's Law of Abbreviation
 - *Technical content:* web sockets, python servers, incrementally building a timeline
+- [Reading](oels_reading_friday_dyads.md)
 
 Iterated Learning:
 - *Scientific content:* iterated learning and the evolution of compositional structure
 - *Technical content:* reading trial lists from CSVs again, PHP scripts for iteration
+- [Reading](oels_reading_friday_il.md)
 
 ## Re-use
 
