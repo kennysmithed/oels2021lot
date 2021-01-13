@@ -81,6 +81,11 @@ Iterated Learning:
 - [Reading](oels_reading_friday_il.md)
 - [Programming task](oels_practical_friday_il.md)
 
+### Wrap-up: Getting your experiment online
+
+- *Scientific content:* None!
+- *Technical content:* How to set up a server, launch and pay participants, manage qualifications, etc
+
 ## Re-use
 
 All aspects of this work are licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
