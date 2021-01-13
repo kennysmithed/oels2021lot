@@ -85,6 +85,7 @@ Iterated Learning:
 
 - *Scientific content:* None!
 - *Technical content:* How to set up a server, launch and pay participants, manage qualifications, etc
+- [Reading: how to get your experiment online](oels_reading_post.md)
 
 ## Re-use
 
